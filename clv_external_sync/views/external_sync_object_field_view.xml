@@ -156,9 +156,7 @@
         <field name="arch" type="xml">
             <page name="settings" position="before">
                 <page name="object_fields" string="Object Fields">
-                    <!--label for="object_field_ids"/-->
                     <field name="object_field_ids" colspan="4" nolabel="1">
-                        <!--tree editable="top" string="Object Fields" create="false"-->
                         <tree string="Object Fields" create="true">
                             <field name="sequence" readonly="True" widget="handle"/>
                             <field name="external_object_field"/>

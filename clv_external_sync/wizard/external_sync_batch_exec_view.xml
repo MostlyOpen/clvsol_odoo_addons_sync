@@ -13,13 +13,6 @@
                 </div>
                 <label for="batch_ids" class="oe_edit_only"/>
                 <field name="batch_ids">
-                    <!--tree>
-                        <field name="name"/>
-                        <field name="code"/>
-                        <field name="age"/>
-                        <field name="category_ids"/>
-                        <field name="address_id" string="Current Address"/>
-                    </tree-->
                 </field>
                 <group>
                     <group>

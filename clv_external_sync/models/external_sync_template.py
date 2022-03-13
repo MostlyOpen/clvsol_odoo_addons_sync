@@ -45,6 +45,11 @@ class ExternalSyncTemplate(models.Model):
         default=True
     )
 
+    force_inclusion = fields.Boolean(
+        string='Force Inclusion',
+        default=False
+    )
+
     external_last_update_start = fields.Datetime(
         string="Last Update (Start)"
     )

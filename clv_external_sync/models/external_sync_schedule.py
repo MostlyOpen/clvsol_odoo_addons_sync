@@ -52,6 +52,11 @@ class ExternalSyncSchedule(models.Model):
         default=True
     )
 
+    force_inclusion = fields.Boolean(
+        string='Force Inclusion',
+        default=False
+    )
+
     external_last_update_start = fields.Datetime(
         string="Last Update (Start)"
     )
@@ -142,6 +147,7 @@ class ExternalSyncSchedule(models.Model):
             schedule.enable_check_missing = schedule.template_id.enable_check_missing
             schedule.enable_inclusion = schedule.template_id.enable_inclusion
             schedule.enable_sync = schedule.template_id.enable_sync
+            schedule.force_inclusion = schedule.template_id.force_inclusion
             schedule.external_last_update_start = schedule.template_id.external_last_update_start
             schedule.external_last_update_end = schedule.template_id.external_last_update_end
             schedule.apply_domain_filter = schedule.template_id.apply_domain_filter
@@ -180,6 +186,7 @@ class ExternalSyncSchedule(models.Model):
             self.enable_check_missing = self.template_id.enable_check_missing
             self.enable_inclusion = self.template_id.enable_inclusion
             self.enable_sync = self.template_id.enable_sync
+            self.force_inclusion = self.template_id.force_inclusion
             self.external_last_update_start = self.template_id.external_last_update_start
             self.external_last_update_end = self.template_id.external_last_update_end
             self.apply_domain_filter = self.template_id.apply_domain_filter

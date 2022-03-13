@@ -721,7 +721,8 @@ class AbstractExternalSync(models.AbstractModel):
 
             local_objects = LocalObject.with_context({'active_test': False}).search([])
 
-            if len(sync_objects) == 0 and len(local_objects) == 0 and schedule.enable_inclusion:
+            if (len(sync_objects) == 0 and len(local_objects) == 0 and schedule.enable_inclusion) or \
+                schedule.force_inclusion:
 
                 if not schedule.enable_sync:
                     external_object_fields_inclusion.append('__last_update')

@@ -158,6 +158,104 @@ class AbstractExternalSync(models.AbstractModel):
 
         return uid, sock, login_msg
 
+    def _object_include(
+        self, sock, external_dbname, uid, external_user_pw,
+        external_model_name, external_id, schedule, local_model_name,
+    ):
+
+        method_args = {}
+        if schedule.method_args is not False:
+            method_args = literal_eval(schedule.method_args)
+        _logger.info(u'%s %s', '>>>>>>>>>> method_args: ', method_args)
+
+        Model = self.env['ir.model']
+
+        local_object_model = Model.search([
+            ('model', '=', local_model_name),
+        ])
+        external_object_model = Model.search([
+            ('model', '=', external_model_name),
+        ])
+
+        LocalObject = self.env[local_model_name]
+        local_object = LocalObject.with_context({'active_test': False}).search([
+            ('id', '=', self.res_id),
+        ])
+
+        external_object_fields_inclusion = []
+        local_object_fields_inclusion = []
+        external_object_fields = []
+        local_object_fields = []
+        external_object_fields_adapt = []
+        local_object_fields_adapt = []
+        for object_field in schedule.object_field_ids:
+            if object_field.inclusion is True:
+                external_object_fields_inclusion.append(object_field.external_object_field)
+                local_object_fields_inclusion.append(object_field.local_object_field)
+            if object_field.synchronization is True:
+                external_object_fields.append(object_field.external_object_field)
+                local_object_fields.append(object_field.local_object_field)
+            if object_field.adaptation is True:
+                if object_field.external_object_field is not False:
+                    external_object_fields_adapt.append(object_field.external_object_field)
+                if object_field.local_object_field is not False:
+                    local_object_fields_adapt.append(object_field.local_object_field)
+            if object_field.identification is True:
+                external_object_fields_identification.append(object_field.external_object_field)
+                local_object_fields_identification.append(object_field.local_object_field)
+
+        local_constants = {}
+        local_values_constants = {}
+        if 'local_constants' in method_args.keys():
+            local_constants = method_args['local_constants']
+            for field in local_object_fields_adapt:
+                if field in local_constants.keys():
+                    local_values_constants[field] = local_constants[field]
+
+        external_args = [
+            ('id', '=', external_id),
+        ]
+        if 'active' in external_object_fields:
+            external_args = [
+                ('id', '=', external_id),
+                '|',
+                ('active', '=', True),
+                ('active', '=', False),
+            ]
+
+        external_object_fields.append('__last_update')
+        external_objects = sock.execute(external_dbname, uid, external_user_pw,
+                                        external_model_name, 'search_read',
+                                        external_args,
+                                        external_object_fields + external_object_fields_adapt)
+
+        external_object = external_objects[0]
+
+        _logger.info(u'>>>>>>>>>>>>>>> %s %s', external_object, local_object)
+
+        external_sync_state = 'included'
+
+        local_values, external_sync_state = self._get_local_values(
+            local_object_model, local_object, local_object_fields_inclusion,
+            external_object_model, external_object, external_object_fields_inclusion,
+            external_sync_state)
+
+        local_values.update(local_values_constants)
+
+        if local_object.id is False:
+            local_object = LocalObject.create(local_values)
+        else:
+            local_object.write(local_values)
+
+        sync_values = {}
+        sync_values['res_id'] = local_object.id
+        sync_values['external_last_update'] = external_object['__last_update']
+        sync_values['res_last_update'] = external_object['__last_update']
+        sync_values['external_sync_state'] = external_sync_state
+        self.write(sync_values)
+
+        self.env.cr.commit()
+
     def _object_synchronize(
         self, sock, external_dbname, uid, external_user_pw,
         external_model_name, external_id, schedule, local_model_name,
@@ -283,7 +381,117 @@ class AbstractExternalSync(models.AbstractModel):
             if schedule.enable_inclusion and \
                (not schedule.enable_sync):
 
-                pass
+                schedule.sync_log += 'Executing: "' + '_object_external_sync' + '"...\n\n'
+
+                include_objects = ExternalSync.with_context({'active_test': False}).search([
+                    ('model', '=', local_model_name),
+                    ('external_sync_state', '!=', 'missing'),
+                    ('external_sync_state', '!=', 'synchronized'),
+                    ('external_sync_state', '!=', 'recognized'),
+                ])
+                _logger.info(u'%s %s', '>>>>>>>>>> (include_objects):', len(include_objects))
+
+                reg_count = 0
+                include_count = 0
+                update_count = 0
+                sync_count = 0
+                sync_include_count = 0
+                sync_update_count = 0
+                task_count = 0
+
+                for include_object in include_objects:
+
+                    reg_count += 1
+
+                    _logger.info(u'%s %s %s %s', '>>>>>>>>>>', reg_count,
+                                 include_object.external_id,
+                                 include_object.external_last_update, )
+
+                    if task_count >= schedule.max_task:
+                        continue
+
+                    if upmost_last_update is False:
+                        upmost_last_update = include_object.external_last_update
+                    else:
+                        if include_object.external_last_update > upmost_last_update:
+                            upmost_last_update = include_object.external_last_update
+
+                    if include_object.res_id == 0:
+
+                        include_count += 1
+                        task_count += 1
+
+                        include_object._object_include(
+                            sock, external_dbname, uid, external_user_pw,
+                            external_model_name, include_object.external_id,
+                            schedule, local_model_name
+                        )
+
+                        self.env.cr.commit()
+
+                sequence_code = False
+                sequence_number_next_actual = False
+
+                if schedule.enable_sequence_code_sync and \
+                   schedule.sequence_code is not False:
+
+                    external_sequence_model = 'ir.sequence'
+                    external_sequence_args = [
+                        ('code', '=', schedule.sequence_code),
+                    ]
+                    external_sequence_fields = ['code', 'number_next_actual']
+                    external_sequence_objects = sock.execute(external_dbname, uid, external_user_pw,
+                                                             external_sequence_model, 'search_read',
+                                                             external_sequence_args,
+                                                             external_sequence_fields)
+
+                    try:
+                        external_sequence_object = external_sequence_objects[0]
+                    except IndexError:
+                        external_sequence_object = external_sequence_objects
+                    external_sequence_number_next_actual = external_sequence_object['number_next_actual']
+
+                    _logger.info(u'%s %s %s', '>>>>>>>>>> (external_sequence):',
+                                 sequence_code, sequence_number_next_actual)
+
+                    IrSequence = self.env['ir.sequence']
+                    local_sequence = IrSequence.with_context({'active_test': False}).search([
+                        ('code', '=', schedule.sequence_code),
+                    ])
+                    local_sequence.number_next_actual = external_sequence_number_next_actual
+
+                    sequence_code = schedule.sequence_code
+                    sequence_number_next_actual = external_sequence_number_next_actual
+
+                _logger.info(u'%s %s', '>>>>>>>>>> max_task: ', schedule.max_task)
+                _logger.info(u'%s %s', '>>>>>>>>>> include_objects: ', len(include_objects))
+                _logger.info(u'%s %s', '>>>>>>>>>> reg_count: ', reg_count)
+                _logger.info(u'%s %s', '>>>>>>>>>> include_count: ', include_count)
+                _logger.info(u'%s %s', '>>>>>>>>>> update_count: ', update_count)
+                _logger.info(u'%s %s', '>>>>>>>>>> sync_include_count: ', sync_include_count)
+                _logger.info(u'%s %s', '>>>>>>>>>> sync_update_count: ', sync_update_count)
+                _logger.info(u'%s %s', '>>>>>>>>>> sync_count: ', sync_count)
+                _logger.info(u'%s %s', '>>>>>>>>>> task_count: ', task_count)
+                _logger.info(u'%s %s', '>>>>>>>>>> date_last_sync: ', date_last_sync)
+                _logger.info(u'%s %s', '>>>>>>>>>> upmost_last_update: ', upmost_last_update)
+                _logger.info(u'%s %s', '>>>>>>>>>> Execution time: ', secondsToStr(time() - start))
+
+                schedule.date_last_sync = date_last_sync
+                schedule.upmost_last_update = upmost_last_update
+                schedule.sync_log +=  \
+                    'include_objects: ' + str(len(include_objects)) + '\n' + \
+                    'reg_count: ' + str(reg_count) + '\n' + \
+                    'include_count: ' + str(include_count) + '\n' + \
+                    'update_count: ' + str(update_count) + '\n' + \
+                    'sync_include_count: ' + str(sync_include_count) + '\n' + \
+                    'sync_update_count: ' + str(sync_update_count) + '\n' + \
+                    'sync_count: ' + str(sync_count) + '\n\n' + \
+                    'task_count: ' + str(task_count) + '\n\n' + \
+                    'date_last_sync: ' + str(date_last_sync) + '\n' + \
+                    'upmost_last_update: ' + str(upmost_last_update) + '\n\n' + \
+                    'sequence_code: ' + str(sequence_code) + '\n' + \
+                    'sequence_number_next_actual: ' + str(sequence_number_next_actual) + '\n\n' + \
+                    'Execution time: ' + str(secondsToStr(time() - start)) + '\n'
 
             elif schedule.enable_sync:
 
@@ -437,7 +645,7 @@ class AbstractExternalSync(models.AbstractModel):
         if schedule.enable_identification or schedule.enable_check_missing:
             self._object_external_identify(schedule)
 
-        if schedule.enable_sync:
+        if schedule.enable_identification:
 
             from time import time
             start = time()

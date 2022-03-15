@@ -188,6 +188,8 @@ class AbstractExternalSync(models.AbstractModel):
         local_object_fields = []
         external_object_fields_adapt = []
         local_object_fields_adapt = []
+        external_object_fields_identification = []
+        local_object_fields_identification = []
         for object_field in schedule.object_field_ids:
             if object_field.inclusion is True:
                 external_object_fields_inclusion.append(object_field.external_object_field)
@@ -553,7 +555,8 @@ class AbstractExternalSync(models.AbstractModel):
 
                             sync_object.external_sync_state = 'updated'
 
-                        if (sync_object.external_sync_state == 'included' or sync_object.external_sync_state == 'updated') and schedule.enable_sync:
+                        if (sync_object.external_sync_state == 'included' or sync_object.external_sync_state == 'updated') and \
+                           schedule.enable_sync:
 
                             sync_count += 1
                             task_count += 1
@@ -930,7 +933,7 @@ class AbstractExternalSync(models.AbstractModel):
             local_objects = LocalObject.with_context({'active_test': False}).search([])
 
             if (len(sync_objects) == 0 and len(local_objects) == 0 and schedule.enable_inclusion) or \
-                schedule.force_inclusion:
+               schedule.force_inclusion:
 
                 if not schedule.enable_sync:
                     external_object_fields_inclusion.append('__last_update')
@@ -1174,7 +1177,6 @@ class AbstractExternalSync(models.AbstractModel):
                 elif local_field_ttype == 'many2one':
                     if external_object[external_object_fields[i]] is not False:
                         local_model_rel = local_model_field[0].relation
-                        # external_model_rel = external_model_field[0].relation
                         external_rel_id = external_object[external_object_fields[i]][0]
                         relation_sync_object = ExternalSync.with_context({'active_test': False}).search([
                             ('model', '=', local_model_rel),

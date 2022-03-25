@@ -4,7 +4,7 @@
 
 {
     'name': 'Base External Sync',
-    'summary': 'Base External Sync  Module used by CLVsol Solutions.',
+    'summary': 'Base External Sync Module used by CLVsol Solutions.',
     'version': '15.0.6.0',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'CLVsol Solutions',
@@ -15,6 +15,7 @@
         'clv_external_sync',
     ],
     'data': [
+        'data/global_settings_sync.xml',
         'data/res_users_migration.xml',
         'data/res_users_rec.xml',
     ],

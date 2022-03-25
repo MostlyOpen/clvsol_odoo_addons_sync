@@ -3,8 +3,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    'name': 'Phase External Sync (for CLVhealth-JCAFB Solution)',
-    'summary': 'Phase External Sync Module used in CLVhealth-JCAFB Solution.',
+    'name': 'Phase External Sync',
+    'summary': 'Phase External Sync Module used by CLVsol Solutions.',
     'version': '15.0.6.0',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'CLVsol Solutions',
@@ -16,7 +16,7 @@
     ],
     'data': [
         'data/phase_sync.xml',
-        # 'data/global_settings_sync.xml',
+        'data/global_settings_sync.xml',
     ],
     'demo': [],
     'test': [],

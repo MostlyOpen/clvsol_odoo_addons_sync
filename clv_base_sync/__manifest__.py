@@ -3,8 +3,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    'name': 'Base External Sync (for CLVhealth-JCAFB Solution)',
-    'summary': 'Base External Sync Module used in CLVhealth-JCAFB Solution.',
+    'name': 'Base External Sync',
+    'summary': 'Base External Sync  Module used by CLVsol Solutions.',
     'version': '15.0.6.0',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'CLVsol Solutions',
@@ -12,7 +12,7 @@
     'website': 'https://github.com/CLVsol',
     'depends': [
         'base',
-        'clv_external_sync_jcafb',
+        'clv_external_sync',
     ],
     'data': [
         'data/res_users_migration.xml',

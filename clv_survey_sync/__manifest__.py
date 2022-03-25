@@ -3,8 +3,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    'name': 'Survey External Sync (for CLVhealth-JCAFB Solution)',
-    'summary': 'Survey External Sync Module used in CLVhealth-JCAFB Solution.',
+    'name': 'Survey External Sync',
+    'summary': 'Survey External Sync Module used by CLVsol Solutions.',
     'version': '15.0.6.0',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'CLVsol Solutions',

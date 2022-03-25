@@ -6,6 +6,6 @@
 File System Sync
 ================
 
-File System Sync Module for CLVhealth-JCAFB Solution.
+File System Sync Module used by CLVsol Solutions.
 
 Developed by `CLVsol <https://github.com/CLVsol>`_.

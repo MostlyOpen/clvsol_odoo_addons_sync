@@ -13,7 +13,7 @@
     'depends': [
         'base',
         'clv_file_system',
-        'clv_external_sync_jcafb',
+        'clv_external_sync',
     ],
     'data': [
         'data/file_system_directory_rec.xml',

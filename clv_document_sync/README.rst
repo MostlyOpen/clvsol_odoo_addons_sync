@@ -6,6 +6,6 @@
 Document External Sync
 ======================
 
-Document External Sync Module used in for CLVhealth-JCAFB Solution.
+Document External Sync Module used by CLVsol Solutions.
 
 Developed by `CLVsol <https://github.com/CLVsol>`_.

@@ -6,6 +6,6 @@
 Event External Sync
 ===================
 
-Event External Sync Module used in for CLVhealth-JCAFB Solution.
+Event External Sync Module used by CLVsol Solutions.
 
 Developed by `CLVsol <https://github.com/CLVsol>`_.

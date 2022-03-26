@@ -6,6 +6,6 @@
 Set External Sync
 =================
 
-Set External Sync Module used in for CLVhealth-JCAFB Solution.
+Set External Sync Module used by CLVsol Solutions.
 
 Developed by `CLVsol <https://github.com/CLVsol>`_.

@@ -8,7 +8,7 @@
 		<field name="name" eval="&quot;&quot;&quot;clv.lab_test.type (clv.lab_test.type) [1]&quot;&quot;&quot;"/>
 		<field name="model" eval="&quot;&quot;&quot;clv.lab_test.type&quot;&quot;&quot;"/>
 		<field name="method" eval="&quot;&quot;&quot;_object_external_sync&quot;&quot;&quot;"/>
-		<field name="method_args" eval="&quot;&quot;&quot;{'local_constants': {'active_log': False}}&quot;&quot;&quot;"/>
+		<!--field name="method_args" eval="&quot;&quot;&quot;{'local_constants': {'active_log': False}}&quot;&quot;&quot;"/-->
 		<field name="external_model" eval="&quot;&quot;&quot;clv.lab_test.type&quot;&quot;&quot;"/>
 		<field name="enable_check_missing" eval="False"/>
 		<field name="enable_identification" eval="True"/>
@@ -84,12 +84,12 @@
 		<field name="sequence" eval="10"/>
 	</record>
 	 
-	<record id="clv_lab_test_type_clv_lab_test_type_1_template_object_field_active_log" model="clv.external_sync.object_field">
+	<!--record id="clv_lab_test_type_clv_lab_test_type_1_template_object_field_active_log" model="clv.external_sync.object_field">
 		<field name="local_object_field" eval="&quot;&quot;&quot;active_log&quot;&quot;&quot;"/>
 		<field name="adaptation" eval="True"/>
 		<field name="template_id" eval="clv_lab_test_type_clv_lab_test_type_1_template"/>
 		<field name="sequence" eval="10"/>
-	</record>
+	</record-->
 	 
 	<record id="clv_lab_test_type_clv_lab_test_type_1_schedule" model="clv.external_sync.schedule">
 		<field name="name" eval="&quot;&quot;&quot;clv.lab_test.type (clv.lab_test.type) [1]&quot;&quot;&quot;"/>
@@ -97,7 +97,7 @@
 	</record>
 	 
 	<record id="clv_external_sync_batch_member_clv_lab_test_type_1" model="clv.external_sync.batch.member">
-		<field name="external_sync_batch_id" ref="clv_external_sync_jcafb.clv_external_sync_batch_default_00"/>
+		<field name="external_sync_batch_id" ref="clv_external_sync.clv_external_sync_batch_default_00"/>
 		<field name="ref_id" ref="clv_lab_test_type_clv_lab_test_type_1_schedule"/>
 	</record>
 	 

@@ -6,6 +6,6 @@
 Lab Test External Sync
 ======================
 
-Lab Test External Sync Module used in for CLVhealth-JCAFB Solution.
+Lab Test External Sync Module used by CLVsol Solutions.
 
 Developed by `CLVsol <https://github.com/CLVsol>`_.

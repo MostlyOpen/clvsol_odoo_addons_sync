@@ -3,8 +3,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    'name': 'Employee External Sync (for CLVhealth-JCAFB Solution)',
-    'summary': 'Employee External Sync Module used in CLVhealth-JCAFB Solution.',
+    'name': 'Employee External Sync',
+    'summary': 'Employee External Sync Module used by CLVsol Solutions.',
     'version': '15.0.6.0',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'CLVsol Solutions',
@@ -12,7 +12,7 @@
     'website': 'https://github.com/CLVsol',
     'depends': [
         'clv_employee',
-        'clv_external_sync_jcafb',
+        'clv_external_sync',
     ],
     'data': [
         'data/hr_department_rec.xml',

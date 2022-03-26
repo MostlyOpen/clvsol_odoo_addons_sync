@@ -6,6 +6,6 @@
 Employee External Sync
 ======================
 
-Employee External Sync Module used in for CLVhealth-JCAFB Solution.
+Employee External Sync Module used by CLVsol Solutions.
 
 Developed by `CLVsol <https://github.com/CLVsol>`_.

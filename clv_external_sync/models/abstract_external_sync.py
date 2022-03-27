@@ -337,7 +337,11 @@ class AbstractExternalSync(models.AbstractModel):
         if local_object.id is False:
             local_object = LocalObject.create(local_values)
         else:
-            local_object.write(local_values)
+            try:
+                local_object.write(local_values)
+            except ValueError as e:
+                _logger.warning(u'>>>>>>>>>>>>>>>>>>>> %s', e)
+                external_sync_state = 'updated'
 
         sync_values = {}
         sync_values['res_id'] = local_object.id
@@ -1206,6 +1210,8 @@ class AbstractExternalSync(models.AbstractModel):
                             ref_object = RefObject.with_context({'active_test': False}).search([
                                 ('id', '=', relation_sync_object.res_id),
                             ])
+                            _logger.warning(u'>>>>>>>>>>>>>>>>>>>> %s %s',
+                                            ref_object, ref_object.id)
                             if ref_object.id is not False:
                                 local_values[local_object_fields[i]] = \
                                     external_ref_model_name + ',' + str(ref_object.id)

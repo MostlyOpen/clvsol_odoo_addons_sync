@@ -5,7 +5,7 @@
 <odoo noupdate="0">
 
 	<record id="clv_document_type_clv_document_type_2_template" model="clv.external_sync.template">
-		<field name="name" eval="&quot;&quot;&quot;clv.document.type (clv.document.type) [2]&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;clv.document.type (clv.document.type) [2] [Sync]&quot;&quot;&quot;"/>
 		<field name="model" eval="&quot;&quot;&quot;clv.document.type&quot;&quot;&quot;"/>
 		<field name="method" eval="&quot;&quot;&quot;_object_external_sync&quot;&quot;&quot;"/>
 		<!--field name="method_args" eval="&quot;&quot;&quot;{'local_constants': {'active_log': False}}&quot;&quot;&quot;"/-->
@@ -52,14 +52,6 @@
 		<field name="sequence" eval="10"/>
 	</record>
 	 
-	<record id="clv_document_type_clv_document_type_2_template_object_field_survey_id" model="clv.external_sync.object_field">
-		<field name="external_object_field" eval="&quot;&quot;&quot;survey_id&quot;&quot;&quot;"/>
-		<field name="local_object_field" eval="&quot;&quot;&quot;survey_id&quot;&quot;&quot;"/>
-		<field name="synchronization" eval="True"/>
-		<field name="template_id" eval="clv_document_type_clv_document_type_2_template"/>
-		<field name="sequence" eval="10"/>
-	</record>
-	 
 	<record id="clv_document_type_clv_document_type_2_template_object_field_phase_id" model="clv.external_sync.object_field">
 		<field name="external_object_field" eval="&quot;&quot;&quot;phase_id&quot;&quot;&quot;"/>
 		<field name="local_object_field" eval="&quot;&quot;&quot;phase_id&quot;&quot;&quot;"/>
@@ -95,7 +87,7 @@
 	</record-->
 	 
 	<record id="clv_document_type_clv_document_type_2_schedule" model="clv.external_sync.schedule">
-		<field name="name" eval="&quot;&quot;&quot;clv.document.type (clv.document.type) [2]&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;clv.document.type (clv.document.type) [2] [Sync]&quot;&quot;&quot;"/>
 		<field name="template_id" eval="clv_document_type_clv_document_type_2_template"/>
 	</record>
 	 

@@ -5,7 +5,7 @@
 <odoo noupdate="0">
  
 	<record id="clv_document_category_clv_document_category_template" model="clv.external_sync.template">
-		<field name="name" eval="&quot;&quot;&quot;clv.document.category (clv.document.category)&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;clv.document.category (clv.document.category) [Sync]&quot;&quot;&quot;"/>
 		<field name="model" eval="&quot;&quot;&quot;clv.document.category&quot;&quot;&quot;"/>
 		<field name="method" eval="&quot;&quot;&quot;_object_external_sync&quot;&quot;&quot;"/>
 		<!--field name="method_args" eval="&quot;&quot;&quot;{'local_constants': {'active_log': False}}&quot;&quot;&quot;"/-->
@@ -71,7 +71,7 @@
 	</record-->
 	 
 	<record id="clv_document_category_clv_document_category_schedule" model="clv.external_sync.schedule">
-		<field name="name" eval="&quot;&quot;&quot;clv.document.category (clv.document.category)&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;clv.document.category (clv.document.category) [Sync]&quot;&quot;&quot;"/>
 		<field name="template_id" eval="clv_document_category_clv_document_category_template"/>
 	</record>
 	 

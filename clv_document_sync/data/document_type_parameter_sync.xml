@@ -5,7 +5,7 @@
 <odoo noupdate="0">
 
 	<record id="clv_document_type_parameter_clv_document_type_parameter_template" model="clv.external_sync.template">
-		<field name="name" eval="&quot;&quot;&quot;clv.document.type.parameter (clv.document.type.parameter)&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;clv.document.type.parameter (clv.document.type.parameter) [Sync]&quot;&quot;&quot;"/>
 		<field name="model" eval="&quot;&quot;&quot;clv.document.type.parameter&quot;&quot;&quot;"/>
 		<field name="method" eval="&quot;&quot;&quot;_object_external_sync&quot;&quot;&quot;"/>
 		<field name="external_model" eval="&quot;&quot;&quot;clv.document.type.parameter&quot;&quot;&quot;"/>
@@ -55,7 +55,7 @@
 	</record>
 	 
 	<record id="clv_document_type_parameter_clv_document_type_parameter_schedule" model="clv.external_sync.schedule">
-		<field name="name" eval="&quot;&quot;&quot;clv.document.type.parameter (clv.document.type.parameter)&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;clv.document.type.parameter (clv.document.type.parameter) [Sync]&quot;&quot;&quot;"/>
 		<field name="template_id" eval="clv_document_type_parameter_clv_document_type_parameter_template"/>
 	</record>
 	 

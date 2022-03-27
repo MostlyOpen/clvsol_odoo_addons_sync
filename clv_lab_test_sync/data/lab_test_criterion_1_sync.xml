@@ -5,7 +5,7 @@
 <odoo noupdate="0">
 
 	<record id="clv_lab_test_criterion_clv_lab_test_criterion_1_template" model="clv.external_sync.template">
-		<field name="name" eval="&quot;&quot;&quot;clv.lab_test.criterion (clv.lab_test.criterion) [1]&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;clv.lab_test.criterion (clv.lab_test.criterion) [1] [Sync]&quot;&quot;&quot;"/>
 		<field name="model" eval="&quot;&quot;&quot;clv.lab_test.criterion&quot;&quot;&quot;"/>
 		<field name="method" eval="&quot;&quot;&quot;_object_external_sync&quot;&quot;&quot;"/>
 		<!--field name="method_args" eval="&quot;&quot;&quot;{'local_constants': {'active_log': False}}&quot;&quot;&quot;"/-->
@@ -90,7 +90,7 @@
 	</record-->
 	 
 	<record id="clv_lab_test_criterion_clv_lab_test_criterion_1_schedule" model="clv.external_sync.schedule">
-		<field name="name" eval="&quot;&quot;&quot;clv.lab_test.criterion (clv.lab_test.criterion) [1]&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;clv.lab_test.criterion (clv.lab_test.criterion) [1] [Sync]&quot;&quot;&quot;"/>
 		<field name="template_id" eval="clv_lab_test_criterion_clv_lab_test_criterion_1_template"/>
 	</record>
 	 

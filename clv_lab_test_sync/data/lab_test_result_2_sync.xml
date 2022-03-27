@@ -5,7 +5,7 @@
 <odoo noupdate="0">
 
 	<record id="clv_lab_test_result_clv_lab_test_result_2_template" model="clv.external_sync.template">
-		<field name="name" eval="&quot;&quot;&quot;clv.lab_test.result (clv.lab_test.result) [2]&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;clv.lab_test.result (clv.lab_test.result) [2] [Sync]&quot;&quot;&quot;"/>
 		<field name="model" eval="&quot;&quot;&quot;clv.lab_test.result&quot;&quot;&quot;"/>
 		<field name="method" eval="&quot;&quot;&quot;_object_external_sync&quot;&quot;&quot;"/>
 		<!--field name="method_args" eval="&quot;&quot;&quot;{'local_constants': {'active_log': False}}&quot;&quot;&quot;"/-->
@@ -146,7 +146,7 @@
 	</record-->
 	 
 	<record id="clv_lab_test_result_clv_lab_test_result_2_schedule" model="clv.external_sync.schedule">
-		<field name="name" eval="&quot;&quot;&quot;clv.lab_test.result (clv.lab_test.result) [2]&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;clv.lab_test.result (clv.lab_test.result) [2] [Sync]&quot;&quot;&quot;"/>
 		<field name="template_id" eval="clv_lab_test_result_clv_lab_test_result_2_template"/>
 	</record>
 	 

@@ -5,10 +5,9 @@
 <odoo noupdate="0">
  
 	<record id="clv_global_tag_clv_global_tag_template" model="clv.external_sync.template">
-		<field name="name" eval="&quot;&quot;&quot;clv.global_tag (clv.global_tag)&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;clv.global_tag (clv.global_tag) [Sync]&quot;&quot;&quot;"/>
 		<field name="model" eval="&quot;&quot;&quot;clv.global_tag&quot;&quot;&quot;"/>
 		<field name="method" eval="&quot;&quot;&quot;_object_external_sync&quot;&quot;&quot;"/>
-		<!--field name="method_args" eval="&quot;&quot;&quot;{'local_constants': {'active_log': False}}&quot;&quot;&quot;"/-->
 		<field name="external_model" eval="&quot;&quot;&quot;clv.global_tag&quot;&quot;&quot;"/>
 		<field name="enable_check_missing" eval="False"/>
 	</record>
@@ -63,15 +62,8 @@
 		<field name="sequence" eval="10"/>
 	</record>
 	 
-	<!--record id="clv_global_tag_clv_global_tag_template_object_field_active_log" model="clv.external_sync.object_field">
-		<field name="local_object_field" eval="&quot;&quot;&quot;active_log&quot;&quot;&quot;"/>
-		<field name="adaptation" eval="True"/>
-		<field name="template_id" eval="clv_global_tag_clv_global_tag_template"/>
-		<field name="sequence" eval="10"/>
-	</record-->
-	 
 	<record id="clv_global_tag_clv_global_tag_schedule" model="clv.external_sync.schedule">
-		<field name="name" eval="&quot;&quot;&quot;clv.global_tag (clv.global_tag)&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;clv.global_tag (clv.global_tag) [Sync]&quot;&quot;&quot;"/>
 		<field name="template_id" eval="clv_global_tag_clv_global_tag_template"/>
 	</record>
 	 

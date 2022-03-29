@@ -23,7 +23,6 @@
         'data/document_1_inc.xml',
         'data/document_2_inc.xml',
         'data/document_3_sync.xml',
-        'data/document_4_sync.xml',
         'data/document_item_1_sync.xml',
         'data/document_item_2_sync.xml',
         'data/document_item_3_sync.xml',

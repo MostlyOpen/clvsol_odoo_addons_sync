@@ -8,7 +8,6 @@
 		<field name="name" eval="&quot;&quot;&quot;clv.document.item (clv.document.item) [1] [Sync]&quot;&quot;&quot;"/>
 		<field name="model" eval="&quot;&quot;&quot;clv.document.item&quot;&quot;&quot;"/>
 		<field name="method" eval="&quot;&quot;&quot;_object_external_sync&quot;&quot;&quot;"/>
-		<!--field name="method_args" eval="&quot;&quot;&quot;{'local_constants': {'active_log': False}}&quot;&quot;&quot;"/-->
 		<field name="external_model" eval="&quot;&quot;&quot;clv.document.item&quot;&quot;&quot;"/>
 		<field name="apply_domain_filter" eval="True"/>
 		<field name="domain_filter" eval="&quot;&quot;&quot;[('document_type_id', '!=', False)]&quot;&quot;&quot;"/>
@@ -81,13 +80,6 @@
 		<field name="template_id" eval="clv_document_item_clv_document_item_1_template"/>
 		<field name="sequence" eval="10"/>
 	</record>
-	 
-	<!--record id="clv_document_item_clv_document_item_1_template_object_field_active_log" model="clv.external_sync.object_field">
-		<field name="local_object_field" eval="&quot;&quot;&quot;active_log&quot;&quot;&quot;"/>
-		<field name="adaptation" eval="True"/>
-		<field name="template_id" eval="clv_document_item_clv_document_item_1_template"/>
-		<field name="sequence" eval="10"/>
-	</record-->
 	 
 	<record id="clv_document_item_clv_document_item_1_schedule" model="clv.external_sync.schedule">
 		<field name="name" eval="&quot;&quot;&quot;clv.document.item (clv.document.item) [1] [Sync]&quot;&quot;&quot;"/>

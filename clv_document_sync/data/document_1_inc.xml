@@ -8,16 +8,12 @@
 		<field name="name" eval="&quot;&quot;&quot;clv.document (clv.document) [1] [Inc]&quot;&quot;&quot;"/>
 		<field name="model" eval="&quot;&quot;&quot;clv.document&quot;&quot;&quot;"/>
 		<field name="method" eval="&quot;&quot;&quot;_object_external_sync&quot;&quot;&quot;"/>
-		<!--field name="method_args" eval="&quot;&quot;&quot;{'local_constants': {'active_log': False}}&quot;&quot;&quot;"/-->
-		<field name="sequence_code" eval="&quot;&quot;&quot;clv.document.code&quot;&quot;&quot;"/>
 		<field name="external_model" eval="&quot;&quot;&quot;clv.document&quot;&quot;&quot;"/>
 		<field name="apply_domain_filter" eval="True"/>
 		<field name="domain_filter" eval="&quot;&quot;&quot;[('parent_id', '=', False)]&quot;&quot;&quot;"/>
-		<field name="sequence_code" eval="&quot;&quot;&quot;clv.document.code&quot;&quot;&quot;"/>
 		<field name="enable_check_missing" eval="False"/>
 		<field name="enable_identification" eval="True"/>
 		<field name="enable_sync" eval="False"/>
-		<field name="enable_sequence_code_sync" eval="True"/>
 	</record>
 	 
 	<record id="clv_document_clv_document_1_inc_template_object_field_code" model="clv.external_sync.object_field">
@@ -144,13 +140,6 @@
 		<field name="template_id" eval="clv_document_clv_document_1_inc_template"/>
 		<field name="sequence" eval="10"/>
 	</record>
-	 
-	<!--record id="clv_document_clv_document_1_inc_template_object_field_active_log" model="clv.external_sync.object_field">
-		<field name="local_object_field" eval="&quot;&quot;&quot;active_log&quot;&quot;&quot;"/>
-		<field name="adaptation" eval="True"/>
-		<field name="template_id" eval="clv_document_clv_document_1_inc_template"/>
-		<field name="sequence" eval="10"/>
-	</record-->
 	 
 	<record id="clv_document_clv_document_1_inc_schedule" model="clv.external_sync.schedule">
 		<field name="name" eval="&quot;&quot;&quot;clv.document (clv.document) [1] [Inc]&quot;&quot;&quot;"/>

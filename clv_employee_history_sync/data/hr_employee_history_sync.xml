@@ -5,7 +5,7 @@
 <odoo noupdate="0">
  
 	<record id="hr_employee_history_hr_employee_history_template" model="clv.external_sync.template">
-		<field name="name" eval="&quot;&quot;&quot;hr.employee.history (hr.employee.history)&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;hr.employee.history (hr.employee.history) [Sync]&quot;&quot;&quot;"/>
 		<field name="model" eval="&quot;&quot;&quot;hr.employee.history&quot;&quot;&quot;"/>
 		<field name="method" eval="&quot;&quot;&quot;_object_external_sync&quot;&quot;&quot;"/>
 		<field name="external_model" eval="&quot;&quot;&quot;hr.employee.history&quot;&quot;&quot;"/>
@@ -69,7 +69,7 @@
 	</record>
 	 
 	<record id="hr_employee_history_hr_employee_history_schedule" model="clv.external_sync.schedule">
-		<field name="name" eval="&quot;&quot;&quot;hr.employee.history (hr.employee.history)&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;hr.employee.history (hr.employee.history) [Sync]&quot;&quot;&quot;"/>
 		<field name="template_id" eval="hr_employee_history_hr_employee_history_template"/>
 	</record>
 	 

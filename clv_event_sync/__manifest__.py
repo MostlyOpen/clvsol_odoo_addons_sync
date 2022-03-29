@@ -16,7 +16,7 @@
     ],
     'data': [
         'data/event_sync.xml',
-        'data/event_attendee_1_sync.xml',
+        'data/event_attendee_1_inc.xml',
         'data/event_attendee_2_sync.xml',
     ],
     'demo': [],

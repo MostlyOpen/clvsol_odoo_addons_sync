@@ -5,10 +5,9 @@
 <odoo noupdate="0">
  
 	<record id="hr_employee_hr_employee_rec_template" model="clv.external_sync.template">
-		<field name="name" eval="&quot;&quot;&quot;hr.employee (hr.employee) [rec]&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;hr.employee (hr.employee) [1] [Rec]&quot;&quot;&quot;"/>
 		<field name="model" eval="&quot;&quot;&quot;hr.employee&quot;&quot;&quot;"/>
 		<field name="method" eval="&quot;&quot;&quot;_object_external_recognize&quot;&quot;&quot;"/>
-		<!--field name="method_args" eval="&quot;&quot;&quot;{'local_constants': {'active_log': False}}&quot;&quot;&quot;"/-->
 		<field name="external_model" eval="&quot;&quot;&quot;hr.employee&quot;&quot;&quot;"/>
 		<field name="enable_check_missing" eval="False"/>
 		<field name="enable_inclusion" eval="False"/>
@@ -24,15 +23,8 @@
 		<field name="sequence" eval="10"/>
 	</record>
 	 
-	<!--record id="hr_employee_hr_employee_rec_template_object_field_active_log" model="clv.external_sync.object_field">
-		<field name="local_object_field" eval="&quot;&quot;&quot;active_log&quot;&quot;&quot;"/>
-		<field name="adaptation" eval="True"/>
-		<field name="template_id" eval="hr_employee_hr_employee_rec_template"/>
-		<field name="sequence" eval="10"/>
-	</record-->
-	 
 	<record id="hr_employee_hr_employee_rec_schedule" model="clv.external_sync.schedule">
-		<field name="name" eval="&quot;&quot;&quot;hr.employee (hr.employee) [rec]&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;hr.employee (hr.employee) [1] [Rec]&quot;&quot;&quot;"/>
 		<field name="template_id" eval="hr_employee_hr_employee_rec_template"/>
 	</record>
 	 

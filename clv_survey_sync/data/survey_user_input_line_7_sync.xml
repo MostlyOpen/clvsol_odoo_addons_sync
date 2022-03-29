@@ -5,7 +5,7 @@
 <odoo noupdate="0">
  
 	<record id="survey_user_input_line_survey_user_input_line_7_template" model="clv.external_sync.template">
-		<field name="name" eval="&quot;&quot;&quot;survey.user_input.line (survey.user_input.line) [7]&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;survey.user_input.line (survey.user_input.line) [7] [Sync]&quot;&quot;&quot;"/>
 		<field name="model" eval="&quot;&quot;&quot;survey.user_input.line&quot;&quot;&quot;"/>
 		<field name="method" eval="&quot;&quot;&quot;_object_external_sync&quot;&quot;&quot;"/>
 		<field name="external_model" eval="&quot;&quot;&quot;survey.user_input.line&quot;&quot;&quot;"/>
@@ -13,7 +13,7 @@
 		<field name="enable_inclusion" eval="True"/>
 		<field name="enable_sync" eval="True"/>
 		<field name="apply_domain_filter" eval="True"/>
-		<field name="domain_filter" eval="&quot;&quot;&quot;[('id', '>', 60000), ('id', '&lt;=', 80000)]&quot;&quot;&quot;"/>
+		<field name="domain_filter" eval="&quot;&quot;&quot;[('id', '>', 120000), ('id', '&lt;=', 140000)]&quot;&quot;&quot;"/>
 		<field name="force_inclusion" eval="True"/>
 		<field name="enable_check_missing" eval="False"/>
 	</record>
@@ -125,7 +125,7 @@
 	</record>
 	 
 	<record id="survey_user_input_line_survey_user_input_line_7_schedule" model="clv.external_sync.schedule">
-		<field name="name" eval="&quot;&quot;&quot;survey.user_input.line (survey.user_input.line) [7]&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;survey.user_input.line (survey.user_input.line) [7] [Sync]&quot;&quot;&quot;"/>
 		<field name="template_id" eval="survey_user_input_line_survey_user_input_line_7_template"/>
 	</record>
 	 

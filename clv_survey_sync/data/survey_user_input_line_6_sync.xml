@@ -13,7 +13,7 @@
 		<field name="enable_inclusion" eval="True"/>
 		<field name="enable_sync" eval="True"/>
 		<field name="apply_domain_filter" eval="True"/>
-		<field name="domain_filter" eval="&quot;&quot;&quot;[('id', '>', 40000), ('id', '&lt;=', 60000)]&quot;&quot;&quot;"/>
+		<field name="domain_filter" eval="&quot;&quot;&quot;[('id', '>', 100000), ('id', '&lt;=', 120000)]&quot;&quot;&quot;"/>
 		<field name="force_inclusion" eval="True"/>
 		<field name="enable_check_missing" eval="False"/>
 	</record>
@@ -125,7 +125,7 @@
 	</record>
 	 
 	<record id="survey_user_input_line_survey_user_input_line_6_schedule" model="clv.external_sync.schedule">
-		<field name="name" eval="&quot;&quot;&quot;survey.user_input.line (survey.user_input.line) [6]&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;survey.user_input.line (survey.user_input.line) [6] [Sync]&quot;&quot;&quot;"/>
 		<field name="template_id" eval="survey_user_input_line_survey_user_input_line_6_template"/>
 	</record>
 	 

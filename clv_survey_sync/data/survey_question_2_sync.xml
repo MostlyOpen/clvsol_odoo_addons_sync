@@ -5,12 +5,10 @@
 <odoo noupdate="0">
  
 	<record id="survey_question_survey_question_2_template" model="clv.external_sync.template">
-		<field name="name" eval="&quot;&quot;&quot;survey.question (survey.question) [2]&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;survey.question (survey.question) [2] [Sync]&quot;&quot;&quot;"/>
 		<field name="model" eval="&quot;&quot;&quot;survey.question&quot;&quot;&quot;"/>
 		<field name="method" eval="&quot;&quot;&quot;_object_external_sync&quot;&quot;&quot;"/>
 		<field name="external_model" eval="&quot;&quot;&quot;survey.question&quot;&quot;&quot;"/>
-		<field name="apply_domain_filter" eval="True"/>
-		<field name="domain_filter" eval="&quot;&quot;&quot;[('is_page', '=', True)]&quot;&quot;&quot;"/>
 		<field name="enable_check_missing" eval="False"/>
 	</record>
 	 
@@ -105,14 +103,6 @@
 		<field name="sequence" eval="10"/>
 	</record>
 	 
-	<!--record id="survey_question_survey_question_2_template_object_field_display_mode" model="clv.external_sync.object_field">
-		<field name="external_object_field" eval="&quot;&quot;&quot;display_mode&quot;&quot;&quot;"/>
-		<field name="local_object_field" eval="&quot;&quot;&quot;display_mode&quot;&quot;&quot;"/>
-		<field name="synchronization" eval="True"/>
-		<field name="template_id" eval="survey_question_survey_question_2_template"/>
-		<field name="sequence" eval="10"/>
-	</record-->
-	 
 	<record id="survey_question_survey_question_2_template_object_field_column_nb" model="clv.external_sync.object_field">
 		<field name="external_object_field" eval="&quot;&quot;&quot;column_nb&quot;&quot;&quot;"/>
 		<field name="local_object_field" eval="&quot;&quot;&quot;column_nb&quot;&quot;&quot;"/>
@@ -146,7 +136,7 @@
 	</record>
 	 
 	<record id="survey_question_survey_question_2_schedule" model="clv.external_sync.schedule">
-		<field name="name" eval="&quot;&quot;&quot;survey.question (survey.question) [2]&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;survey.question (survey.question) [2] [Sync]&quot;&quot;&quot;"/>
 		<field name="template_id" eval="survey_question_survey_question_2_template"/>
 	</record>
 	 

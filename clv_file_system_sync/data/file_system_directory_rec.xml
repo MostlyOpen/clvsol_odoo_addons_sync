@@ -5,7 +5,7 @@
 <odoo noupdate="0">
  
 	<record id="clv_file_system_directory_clv_file_system_directory_rec_template" model="clv.external_sync.template">
-		<field name="name" eval="&quot;&quot;&quot;clv.file_system.directory (clv.file_system.directory) [rec]&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;clv.file_system.directory (clv.file_system.directory) [Rec]&quot;&quot;&quot;"/>
 		<field name="model" eval="&quot;&quot;&quot;clv.file_system.directory&quot;&quot;&quot;"/>
 		<field name="method" eval="&quot;&quot;&quot;_object_external_recognize&quot;&quot;&quot;"/>
 		<field name="external_model" eval="&quot;&quot;&quot;clv.file_system.directory&quot;&quot;&quot;"/>
@@ -23,7 +23,7 @@
 	</record>
 	 
 	<record id="clv_file_system_directory_clv_file_system_directory_rec_schedule" model="clv.external_sync.schedule">
-		<field name="name" eval="&quot;&quot;&quot;clv.file_system.directory (clv.file_system.directory) [rec]&quot;&quot;&quot;"/>
+		<field name="name" eval="&quot;&quot;&quot;clv.file_system.directory (clv.file_system.directory) [Rec]&quot;&quot;&quot;"/>
 		<field name="template_id" eval="clv_file_system_directory_clv_file_system_directory_rec_template"/>
 	</record>
 	 

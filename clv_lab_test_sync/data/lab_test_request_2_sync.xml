@@ -10,10 +10,7 @@
 		<field name="method" eval="&quot;&quot;&quot;_object_external_sync&quot;&quot;&quot;"/>
 		<field name="apply_domain_filter" eval="True"/>
 		<field name="domain_filter" eval="&quot;&quot;&quot;[('state', '!=', 'tested')]&quot;&quot;&quot;"/>
-		<!--field name="method_args" eval="&quot;&quot;&quot;{'local_constants': {'active_log': False}}&quot;&quot;&quot;"/-->
 		<field name="external_model" eval="&quot;&quot;&quot;clv.lab_test.request&quot;&quot;&quot;"/>
-		<field name="sequence_code" eval="&quot;&quot;&quot;clv.lab_test.request.code&quot;&quot;&quot;"/>
-		<field name="enable_sequence_code_sync" eval="True"/>
 		<field name="enable_check_missing" eval="False"/>
 		<field name="enable_identification" eval="False"/>
 		<field name="enable_inclusion" eval="False"/>
@@ -81,13 +78,6 @@
 		<field name="template_id" eval="clv_lab_test_request_clv_lab_test_request_2_template"/>
 		<field name="sequence" eval="10"/>
 	</record>
-	 
-	<!--record id="clv_lab_test_request_clv_lab_test_request_2_template_object_field_active_log" model="clv.external_sync.object_field">
-		<field name="local_object_field" eval="&quot;&quot;&quot;active_log&quot;&quot;&quot;"/>
-		<field name="adaptation" eval="True"/>
-		<field name="template_id" eval="clv_lab_test_request_clv_lab_test_request_2_template"/>
-		<field name="sequence" eval="10"/>
-	</record-->
 	 
 	<record id="clv_lab_test_request_clv_lab_test_request_2_schedule" model="clv.external_sync.schedule">
 		<field name="name" eval="&quot;&quot;&quot;clv.lab_test.request (clv.lab_test.request) [2] [Sync]&quot;&quot;&quot;"/>

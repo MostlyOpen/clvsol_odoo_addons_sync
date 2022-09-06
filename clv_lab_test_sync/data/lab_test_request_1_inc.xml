@@ -61,7 +61,9 @@
 	<record id="clv_lab_test_request_clv_lab_test_request_1_inc_template_object_field_state" model="clv.external_sync.object_field">
 		<field name="external_object_field" eval="&quot;&quot;&quot;state&quot;&quot;&quot;"/>
 		<field name="local_object_field" eval="&quot;&quot;&quot;state&quot;&quot;&quot;"/>
-		<field name="adaptation" eval="True"/>
+		<!--field name="adaptation" eval="True"/-->
+		<field name="inclusion" eval="True"/>
+		<field name="synchronization" eval="True"/>
 		<field name="template_id" eval="clv_lab_test_request_clv_lab_test_request_1_inc_template"/>
 		<field name="sequence" eval="10"/>
 	</record>

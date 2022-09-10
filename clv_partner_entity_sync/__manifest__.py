@@ -12,7 +12,7 @@
     'website': 'https://github.com/CLVsol',
     'depends': [
         'base',
-        'clv_external_sync_jcafb',
+        'clv_external_sync',
     ],
     'data': [
         'data/res_country_sync.xml',

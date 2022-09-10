@@ -1210,8 +1210,10 @@ class AbstractExternalSync(models.AbstractModel):
                             ref_object = RefObject.with_context({'active_test': False}).search([
                                 ('id', '=', relation_sync_object.res_id),
                             ])
-                            _logger.warning(u'>>>>>>>>>>>>>>>>>>>> %s %s',
-                                            ref_object, ref_object.id)
+                            # _logger.warning(u'>>>>>>>>>>>>>>>>>>>> %s %s',
+                            #                 ref_object, ref_object.id)
+                            _logger.info(u'>>>>>>>>>>>>>>>>>>>> %s %s',
+                                         ref_object, ref_object.id)
                             if ref_object.id is not False:
                                 local_values[local_object_fields[i]] = \
                                     external_ref_model_name + ',' + str(ref_object.id)

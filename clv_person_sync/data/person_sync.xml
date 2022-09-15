@@ -8,12 +8,8 @@
 		<field name="name" eval="&quot;&quot;&quot;clv.person (clv.person)&quot;&quot;&quot;"/>
 		<field name="model" eval="&quot;&quot;&quot;clv.person&quot;&quot;&quot;"/>
 		<field name="method" eval="&quot;&quot;&quot;_object_external_sync&quot;&quot;&quot;"/>
-		<!--field name="method_args" eval="&quot;&quot;&quot;{'local_constants': {'active_log': False}}&quot;&quot;&quot;"/-->
-		<!--field name="sequence_code" eval="&quot;&quot;&quot;clv.person.code&quot;&quot;&quot;"/-->
 		<field name="external_model" eval="&quot;&quot;&quot;clv.person&quot;&quot;&quot;"/>
-		<!--field name="sequence_code" eval="&quot;&quot;&quot;clv.person.code&quot;&quot;&quot;"/-->
 		<field name="enable_check_missing" eval="False"/>
-		<!--field name="enable_sequence_code_sync" eval="True"/-->
 	</record>
 	 
 	<record id="clv_person_clv_person_template_object_field_name" model="clv.external_sync.object_field">
@@ -313,13 +309,6 @@
 		<field name="template_id" eval="clv_person_clv_person_template"/>
 		<field name="sequence" eval="10"/>
 	</record>
-	 
-	<!--record id="clv_person_clv_person_template_object_field_active_log" model="clv.external_sync.object_field">
-		<field name="local_object_field" eval="&quot;&quot;&quot;active_log&quot;&quot;&quot;"/>
-		<field name="adaptation" eval="True"/>
-		<field name="template_id" eval="clv_person_clv_person_template"/>
-		<field name="sequence" eval="10"/>
-	</record-->
 	 
 	<record id="clv_person_clv_person_schedule" model="clv.external_sync.schedule">
 		<field name="name" eval="&quot;&quot;&quot;clv.person (clv.person)&quot;&quot;&quot;"/>

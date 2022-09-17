@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<!-- Copyright (C) 2013-Today  Carlos Eduardo Vercelino - CLVsol
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo noupdate="0">
+ 
+	<record id="clv_person_history_clv_person_history_template_object_field_is_patient_history" model="clv.external_sync.object_field">
+		<field name="external_object_field" eval="&quot;&quot;&quot;is_patient_history&quot;&quot;&quot;"/>
+		<field name="local_object_field" eval="&quot;&quot;&quot;is_patient_history&quot;&quot;&quot;"/>
+		<field name="synchronization" eval="True"/>
+		<field name="template_id" ref="clv_person_history_sync.clv_person_history_clv_person_history_template"/>
+		<field name="sequence" eval="10"/>
+	</record>
+	 
+	<record id="clv_person_history_clv_person_history_schedule_object_field_is_patient_history" model="clv.external_sync.object_field">
+		<field name="external_object_field" eval="&quot;&quot;&quot;is_patient_history&quot;&quot;&quot;"/>
+		<field name="local_object_field" eval="&quot;&quot;&quot;is_patient_history&quot;&quot;&quot;"/>
+		<field name="synchronization" eval="True"/>
+		<field name="schedule_id" ref="clv_person_history_sync.clv_person_history_clv_person_history_schedule"/>
+		<field name="sequence" eval="10"/>
+	</record>
+	 
+</odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<!-- Copyright (C) 2013-Today  Carlos Eduardo Vercelino - CLVsol
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo noupdate="0">
+ 
+	<record id="clv_patient_history_clv_patient_history_2_sync_template_object_field_related_person_history_is_unavailable" model="clv.external_sync.object_field">
+		<field name="external_object_field" eval="&quot;&quot;&quot;related_person_history_is_unavailable&quot;&quot;&quot;"/>
+		<field name="local_object_field" eval="&quot;&quot;&quot;related_person_history_is_unavailable&quot;&quot;&quot;"/>
+		<field name="synchronization" eval="True"/>
+		<field name="template_id" ref="clv_patient_history_sync.clv_patient_history_clv_patient_history_2_sync_template"/>
+		<field name="sequence" eval="10"/>
+	</record>
+	 
+	<record id="clv_patient_history_clv_patient_history_2_sync_schedule_object_field_related_person_history_is_unavailable" model="clv.external_sync.object_field">
+		<field name="external_object_field" eval="&quot;&quot;&quot;related_person_history_is_unavailable&quot;&quot;&quot;"/>
+		<field name="local_object_field" eval="&quot;&quot;&quot;related_person_history_is_unavailable&quot;&quot;&quot;"/>
+		<field name="synchronization" eval="True"/>
+		<field name="schedule_id" ref="clv_patient_history_sync.clv_patient_history_clv_patient_history_2_sync_schedule"/>
+		<field name="sequence" eval="10"/>
+	</record>
+	 
+	<record id="clv_patient_history_clv_patient_history_2_sync_template_object_field_related_person_history_id" model="clv.external_sync.object_field">
+		<field name="external_object_field" eval="&quot;&quot;&quot;related_person_history_id&quot;&quot;&quot;"/>
+		<field name="local_object_field" eval="&quot;&quot;&quot;related_person_history_id&quot;&quot;&quot;"/>
+		<field name="synchronization" eval="True"/>
+		<field name="template_id" ref="clv_patient_history_sync.clv_patient_history_clv_patient_history_2_sync_template"/>
+		<field name="sequence" eval="10"/>
+	</record>
+	 
+	<record id="clv_patient_history_clv_patient_history_2_sync_schedule_object_field_related_person_history_id" model="clv.external_sync.object_field">
+		<field name="external_object_field" eval="&quot;&quot;&quot;related_person_history_id&quot;&quot;&quot;"/>
+		<field name="local_object_field" eval="&quot;&quot;&quot;related_person_history_id&quot;&quot;&quot;"/>
+		<field name="synchronization" eval="True"/>
+		<field name="schedule_id" ref="clv_patient_history_sync.clv_patient_history_clv_patient_history_2_sync_schedule"/>
+		<field name="sequence" eval="10"/>
+	</record>
+	 
+</odoo>
